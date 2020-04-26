@@ -6,7 +6,9 @@ import java.util.Properties;
 public class ConnetorDialog extends JDialog implements ActionListener {
 
     public ConnetorDialog(JFrame owner, String title, Properties p) {
-        super(owner,title,true);
+        super(owner,title,false);
+
+        setSize(400,400);
     }
 
     @Override

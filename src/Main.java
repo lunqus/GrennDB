@@ -12,6 +12,9 @@ public class Main {
         ConnetorDialog inputDBInfo = new ConnetorDialog(main, "Database Info", databaseProperties);
         inputDBInfo.setVisible(true);
 
+        if(inputDBInfo.isCanceled)
+            System.exit(1);
+
         main.setSize(800,600);
         main.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // When close the window close the application
         main.setVisible(true);

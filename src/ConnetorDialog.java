@@ -4,9 +4,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Properties;
 
-public class ConnetorDialog extends JDialog implements ActionListener {
+public class ConnetorDialog extends JDialog {
 
     Properties dbProperties;
+    boolean isCanceled = false;
 
     JLabel hostLBL = new JLabel("Host");
     JTextField host = new JTextField();
@@ -33,6 +34,10 @@ public class ConnetorDialog extends JDialog implements ActionListener {
 
         dbProperties = props;
 
+        submitBTN.addActionListener(this::performOperation);
+
+        cancelBTN.addActionListener(this::performOperation);
+
         JPanel dataPanel = new JPanel();
 
         dataPanel.setLayout(new GridLayout(5, 2));
@@ -56,8 +61,11 @@ public class ConnetorDialog extends JDialog implements ActionListener {
         add(buttonPanel, BorderLayout.SOUTH);
     }
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
+    private void performOperation(ActionEvent e) {
+        if(e.getSource() == cancelBTN)
+            this.isCanceled = true;
 
+        dispose();
     }
+
 }

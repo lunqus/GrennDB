@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.sql.Connection;
 import java.util.Properties;
 
 public class Main {
@@ -14,6 +15,8 @@ public class Main {
 
         if(inputDBInfo.isCanceled)
             System.exit(1);
+
+        Connector conn = new Connector(inputDBInfo.getProps(), inputDBInfo.pass.getText());
 
         main.setSize(800,600);
         main.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // When close the window close the application

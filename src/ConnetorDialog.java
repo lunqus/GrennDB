@@ -68,4 +68,12 @@ public class ConnetorDialog extends JDialog {
         dispose();
     }
 
+    public Properties getProps() {
+        dbProperties.setProperty("db_name", dbName.getText());
+        dbProperties.setProperty("db_host", host.getText());
+        dbProperties.setProperty("db_port", port.getText());
+        dbProperties.setProperty("db_user", user.getText());
+        return dbProperties;
+
+    }
 }

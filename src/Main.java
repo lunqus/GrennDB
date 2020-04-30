@@ -18,6 +18,9 @@ public class Main {
 
         Connector conn = new Connector(inputDBInfo.getProps(), inputDBInfo.pass.getText());
 
+        if(!conn.connect())
+            System.exit(1);
+
         main.setSize(800,600);
         main.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // When close the window close the application
         main.setVisible(true);

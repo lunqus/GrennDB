@@ -19,7 +19,7 @@ public class Connector {
         db_host = props.getProperty("db_host");
         db_port = props.getProperty("db_port");
         db_driver = "com.mysql.cj.jdbc.Driver";
-        db_url = "jdbc:mysql://" + db_host + ":" + db_port + "/" + db_name;
+        db_url = "jdbc:mysql://" + db_host + ":" + db_port + "/" + db_name + "?serverTimezone=UTC";
 
         System.out.println(db_url);
     }

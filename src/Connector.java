@@ -1,7 +1,4 @@
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.Properties;
 
 public class Connector {
@@ -38,7 +35,11 @@ public class Connector {
                 return false;
         }
 
-        System.out.println("Connectred to the database");
+        System.out.println("Connected to the database");
         return true;
+    }
+
+    public ResultSet executeQuery(String query) throws SQLException {
+        return st.executeQuery(query);
     }
 }
